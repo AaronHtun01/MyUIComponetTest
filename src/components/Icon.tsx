@@ -1,17 +1,20 @@
 import { FC } from 'react';
 import {
   EnvelopeIcon,
-  BellAlertIcon
+  BellAlertIcon,
+  Bars3Icon,
+  XMarkIcon,
+  GlobeAltIcon
 } from '@heroicons/react/24/outline';
 
-// Define available icon types
-type IconType = 'envelope' | 'bellalert'; 
+type IconType = 'envelope' | 'bellalert' | 'bars3' | 'xmark' | 'globealt'; 
 
-// Map each type to an actual icon component
 const icons: Record<IconType, FC<{ className?: string }>> = {
   envelope: EnvelopeIcon,
-  bellalert: BellAlertIcon
-  // Add more icons here
+  bellalert: BellAlertIcon,
+  bars3: Bars3Icon,
+  xmark: XMarkIcon,
+  globealt: GlobeAltIcon
 };
 
 interface IconProps {
