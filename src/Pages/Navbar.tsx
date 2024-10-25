@@ -48,8 +48,7 @@ const Navbar = () => {
       </div>
 
       {/* Dropdown Menu */}
-        {isOpen && (
-          <div className="md:hidden">
+          <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0 overflow-hidden'}`}>
             <div className="mt-4 flex flex-col space-y-2 px-10 pb-4">
                 <a href="#" className="hover:text-red-500 transition-colors duration-300">Home</a>
                 <a href="#" className="hover:text-red-500 transition-colors duration-300">Docs</a>
@@ -66,8 +65,7 @@ const Navbar = () => {
                <a href="#" className="hover:text-red-500 transition-colors duration-300">Settings</a>
                <a href="#" className="hover:text-red-500 transition-colors duration-300">Billing & Payments</a>
             </div>
-          </div>  
-        )}
+          </div>
     </nav>
   )
 }
