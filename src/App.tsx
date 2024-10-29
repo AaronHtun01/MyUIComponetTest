@@ -1,9 +1,12 @@
-import Navbar from "./Pages/Navbar.jsx"
-
+import Navbar from "./pages/Navbar.tsx"
+import Home from "./pages/Home.tsx"
 function App() {
 
   return (
-    <Navbar />
+    <>
+      <Navbar />
+      <Home />
+    </> 
   )
 }
 

@@ -3,6 +3,7 @@ import RightSideNav from "../components/RightSideNav"
 import LeftSide from "../components/LeftSide"
 import MobileMenu from "../components/MobileMenu"
 
+
 const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false)
@@ -12,8 +13,8 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 w-full py-6 border-b-2 bg-white z-10">
-      <div className= "flex flex-row justify-between items-center mx-10">
+    <nav className="fixed top-0 z-40 w-full py-6 border-b-2 bg-white">
+      <div className= "flex flex-row justify-between items-start mx-10">
           
          <LeftSide />
 

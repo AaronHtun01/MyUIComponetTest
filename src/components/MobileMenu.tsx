@@ -1,43 +1,59 @@
-import { IoGlobe } from "react-icons/io5";
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai'
+import { cn } from "../utils";
 
 interface MobileMenuProps {
   isOpen: boolean
   toggleMenu: () => void
 }
+
+const mobileMenuItems = [
+  { name: 'Home', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Inbox', href: '#' },
+  { name: 'Notifications', href: '#' },
+  { name: 'Profile', href: '#' },
+  { name: 'Installation', href: '#' }
+]
+
+const secondaryMobileMenuItems = [
+  { name: 'General', href: "#"},
+  { name: 'Logout', href: "#"},
+  { name: 'English', href: "#"},
+  { name: 'Settings', href: "#"},
+  { name: 'Billing & Payments', href: "#"},
+]
+
 const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
+
+  console.log(isOpen)
+
   return (
+    <div className={cn("md:hidden transition-all duration-300 ease-in-out relative")}>
 
-    <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+      <div className="md:hidden w-full flex flex-col items-end justify-end">
 
-            <div className="md:hidden">
-              <button onClick={toggleMenu} className="text--danger focus:outline-none">
-                  {isOpen ? (<AiOutlineClose />) : (<AiOutlineBars />)}
-              </button>
+        <button onClick={toggleMenu} className="text-danger focus:outline-none">
+          {isOpen ? <AiOutlineClose /> : <AiOutlineBars />}
+        </button>
+        
+        <div className={cn("transition-all duration-300 ease-in-out pt-24 bg-white", isOpen ? "h-screen opacity-100" : "h-0 overflow-hidden opacity-0")}>
+          <div className="mt-4 flex flex-col space-y-2 px-10 pb-4">
 
-                <div className={`transition-all duration-300 ease-in-out ${isOpen ? "opacity-100 max-h-screen" : "opacity-0 max-h-0 overflow-hidden"}`}>
-                    
-                    <div className="mt-4 flex flex-col space-y-2 px-10 pb-4">
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Home</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Docs</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Inbox</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Notifications</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Profile</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Installation</a>
-                    </div>
+            {mobileMenuItems.map((item) => (
+              <a key={item.name} href={item.href} className="hover:text-danger transition-colors duration-300">{item.name}</a>
+            ))}
 
-                    <div className="mt-4 flex flex-col space-y-2 px-10 pb-4">
-                      <a href="#" className ="text--danger text-lg font-semibold">General</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Logout</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">English <IoGlobe type="globealt" className="inline"/></a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Settings</a>
-                      <a href="#" className="hover:text--danger transition-colors duration-300">Billing & Payments</a>
-                    </div>
-                </div>
-              </div>
-            </div>
+          </div>
 
-            
+          <div className="mt-4 flex flex-col space-y-2 px-10 pb-4">
+
+            {secondaryMobileMenuItems.map((item) => {
+              return <a key={item.name} href={item.href} className="hover:text-danger transition-colors duration-300">{item.name}</a>
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
