@@ -1,5 +1,6 @@
 import { GoProjectRoadmap } from "react-icons/go";
 import Categories from "../components/Categories";
+import Card from "../components/Card";
 const Home = () => {
 
   return (
@@ -26,7 +27,18 @@ const Home = () => {
 
       <h1 className="text-3xl font-bold ml-16">Starting Building Your App Now</h1>
 
-      <Categories />
+      <div className="flex">
+        <Categories />
+
+        <div className="flex">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+          
+      </div>
+      
 
     </div>
   )
