@@ -11,23 +11,23 @@ const Card = () => {
                 </Avatar>
 
   return (
-    <div className="ml-8">
-      <div className="w-60 shadow-lg rounded-lg p-4">
-        <img src="./src/images/cola.jpg" alt="cola" className="rounded"/>
+      <div className="ml-8">
+        <div className="w-60 shadow-lg rounded-lg p-4">
+          <img src="./src/images/cola.jpg" alt="cola" className="rounded"/>
 
-        <div className="flex items-center pt-3">
-            {avatar}
-            <h1 className="font-semibold ml-3">Emily</h1>
-        </div>
-
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque porro vitae repudiandae nemo quos, </p>
-          
-          <div className="flex items-center pt-2">
-              <FaStar/>
-              <h3 className="font-semibold ml-3">5.0</h3>
+          <div className="flex items-center pt-3">
+              {avatar}
+              <h1 className="font-semibold ml-3">Emily</h1>
           </div>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque porro vitae repudiandae nemo quos, </p>
+            
+            <div className="flex items-center pt-2">
+                <FaStar/>
+                <h3 className="font-semibold ml-3">5.0</h3>
+            </div>
+        </div>
       </div>
-    </div>
   )
 }
 

@@ -30,16 +30,12 @@ const Home = () => {
       <div className="flex">
         <Categories />
 
-        <div className="flex">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-          
+    
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
-      
-
     </div>
   )
 }
